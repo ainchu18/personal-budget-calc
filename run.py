@@ -34,7 +34,7 @@ def get_monthly_expenses_data():
 
 def check_val(values):
     """
-    Change all string datas to integeres.
+    Change all string datas to integers.
     Raise a ValueError if strings cant be changed to integers
     or if there is not exactly 3 values entered by the user.
     """
@@ -100,8 +100,9 @@ def get_last_5_entries_expenses():
 
 def calculate_budget_for_next_month(data):
     """
-    Calculates and adjust the average budget for each expenses
-    and adding 10% to the next months budget
+    Calculates and adjust the average budget for each expenses per month
+    and budget to to expenses where money is more needed
+    depending on the data in the last five months.
     """
     print("Calculating and adjusting budget for the next month...\n")
     new_budget_data = []
