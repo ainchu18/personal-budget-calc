@@ -53,30 +53,41 @@ def check_val(values):
     return True
 
 
-def amend_monthly_expenses_worksheet(data):
+#def amend_monthly_expenses_worksheet(data):
+#    """
+#    Amend the monthly expenses worksheet.
+#    Add a new row with the data provided.
+#   """
+#    print("Amending monthly expenses worksheet...Please stand by!\n")
+#
+#    expenses_worksheet = SHEET.worksheet('expenses')
+#    expenses_worksheet.append_row(data)
+#
+#    print("Expenses worksheet amended successfully!\n")
+
+
+#def amend_monthly_loss_or_savings_worksheet(data):
+#    """
+#    Amend the monthly loss or savings worksheet.
+#    Add a new row with the data provided.
+#    """
+#    print("Amending monthly loss or savings worksheet...Please stand by!\n")
+
+#    loss_or_savings_worksheet = SHEET.worksheet('loss-or-savings')
+#    loss_or_savings_worksheet.append_row(data)
+
+#    print("Loss or savings worksheet amended successfully!\n")
+
+
+def amend_worksheet(data, worksheet):
     """
-    Amend the monthly expenses worksheet.
-    Add a new row with the data provided.
+    Obtains a list of integers to be amended into the worksheets,
+    it also updates the relevant worksheet with the data provided.
     """
-    print("Amending monthly expenses worksheet...Please stand by!\n")
-
-    expenses_worksheet = SHEET.worksheet('expenses')
-    expenses_worksheet.append_row(data)
-
-    print("Expenses worksheet amended successfully!\n")
-
-
-def amend_monthly_loss_or_savings_worksheet(data):
-    """
-    Amend the monthly loss or savings worksheet.
-    Add a new row with the data provided.
-    """
-    print("Amending monthly loss or savings worksheet...Please stand by!\n")
-
-    loss_or_savings_worksheet = SHEET.worksheet('loss-or-savings')
-    loss_or_savings_worksheet.append_row(data)
-
-    print("Loss or savings worksheet amended successfully!\n")
+    print(f"Amending {worksheet} worksheet...Please stand by!\n")
+    worksheet_to_amend = SHEET.worksheet(worksheet)
+    worksheet_to_amend.append_row(data)
+    print(f"{worksheet} worksheet amended successfully!\n")
 
 
 def calculate_loss_or_savings_data(expenses_row):
@@ -90,6 +101,7 @@ def calculate_loss_or_savings_data(expenses_row):
     print("Calculating loss or savings...Please standby!\n")
     budget = SHEET.worksheet('budget').get_all_values()
     budget_row = budget[-1]
+    print("Loss or savings data calculated successfully!\n")
     
     loss_savings_data = []
 
@@ -106,9 +118,9 @@ def main():
     """
     monthly_data = get_monthly_expenses_data()
     monthly_expenses = [int(num) for num in monthly_data]
-    amend_monthly_expenses_worksheet(monthly_expenses)
+    amend_worksheet(monthly_expenses, "expenses")
     new_loss_savings_data = calculate_loss_or_savings_data(monthly_expenses)
-    amend_monthly_loss_or_savings_worksheet(new_loss_savings_data)
+    amend_worksheet(new_loss_savings_data, "loss-or-savings")
 
 
 print("Welcome to the Personal Budget Calculation Program\n")
