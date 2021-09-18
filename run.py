@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -65,6 +66,32 @@ def amend_monthly_expenses_worksheet(data):
     print("Expenses worksheet amended successfully!\n")
 
 
-monthly_data = get_monthly_expenses_data()
-monthly_expenses = [int(num) for num in monthly_data]
-amend_monthly_expenses_worksheet(monthly_expenses)
+def calculate_loss_or_savings_data(expenses_row):
+    """
+    Compare monthly budget to the monthly expenses,
+    and calculate for loss or savings.
+    A positive number indicates savings.
+    On one hand, a negative result indicates that the user
+    spent more than his monthly budget for that specific monthly budget.
+    """
+    print("Calculating loss or savings...Please standby!\n")
+
+    budget = SHEET.worksheet('budget').get_all_values()
+    budget_row = budget[-1]
+    print(budget_row)
+
+
+
+
+def main():
+    """
+    Run all the program functions.
+    """
+    monthly_data = get_monthly_expenses_data()
+    monthly_expenses = [int(num) for num in monthly_data]
+    amend_monthly_expenses_worksheet(monthly_expenses)
+    calculate_loss_or_savings_data(monthly_expenses)
+
+
+print("Welcome to the Personal Budget Calculation Program\n")
+main()
