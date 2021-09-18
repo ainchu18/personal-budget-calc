@@ -34,6 +34,7 @@ def check_val(values):
     or if there is not exactly 3 values entered by the user.
     """
     try:
+        [int(value) for value in values]
         if len(values) != 3:
             raise ValueError(
                 f"Exactly 3 values needed, you entered {len(values)}"
