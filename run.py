@@ -53,32 +53,6 @@ def check_val(values):
     return True
 
 
-#def amend_monthly_expenses_worksheet(data):
-#    """
-#    Amend the monthly expenses worksheet.
-#    Add a new row with the data provided.
-#   """
-#    print("Amending monthly expenses worksheet...Please stand by!\n")
-#
-#    expenses_worksheet = SHEET.worksheet('expenses')
-#    expenses_worksheet.append_row(data)
-#
-#    print("Expenses worksheet amended successfully!\n")
-
-
-#def amend_monthly_loss_or_savings_worksheet(data):
-#    """
-#    Amend the monthly loss or savings worksheet.
-#    Add a new row with the data provided.
-#    """
-#    print("Amending monthly loss or savings worksheet...Please stand by!\n")
-
-#    loss_or_savings_worksheet = SHEET.worksheet('loss-or-savings')
-#    loss_or_savings_worksheet.append_row(data)
-
-#    print("Loss or savings worksheet amended successfully!\n")
-
-
 def amend_worksheet(data, worksheet):
     """
     Obtains a list of integers to be amended into the worksheets,
@@ -112,6 +86,21 @@ def calculate_loss_or_savings_data(expenses_row):
     return loss_savings_data
 
 
+def get_last_5_entries_expenses():
+    """
+    Retrieves columns of data from the expenses worksheet,
+    retrieves the last 5 entries from each column and
+    returns data as list of lists.
+    """
+    expenses = SHEET.worksheet("expenses")
+
+    columns = []
+    for col in range(1, 4):
+        column = expenses.col_values(col)
+        columns.append(column[-8:])
+
+    return columns
+
 def main():
     """
     Run all the program functions.
@@ -124,4 +113,6 @@ def main():
 
 
 print("Welcome to the Personal Budget Calculation Program\n")
-main()
+#main()
+
+expenses_columns = get_last_5_entries_expenses()
