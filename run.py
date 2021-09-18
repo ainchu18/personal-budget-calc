@@ -97,9 +97,28 @@ def get_last_5_entries_expenses():
     columns = []
     for col in range(1, 4):
         column = expenses.col_values(col)
-        columns.append(column[-8:])
+        columns.append(column[-5:])
 
     return columns
+
+
+def calculate_budget_for_next_month(data):
+    """
+    Calculates the average budget for each expenses
+    and adding 10% to the next months budget
+    """
+    print("Calculating money to be added to budget for the next month...Please standby!\n")
+    new_budget_data = []
+
+    for column in data:
+        int_col = [int(num) for num in column]
+        average_expenses = sum(int_col) / len(int_col)
+        budget_data = average_expenses * 1.1
+
+        new_budget_data.append(round(budget_data))
+    
+    return new_budget_data
+
 
 def main():
     """
@@ -110,9 +129,11 @@ def main():
     amend_worksheet(monthly_expenses, "expenses")
     new_loss_savings_data = calculate_loss_or_savings_data(monthly_expenses)
     amend_worksheet(new_loss_savings_data, "loss-or-savings")
+    expenses_columns = get_last_5_entries_expenses()
+    budget_allowance = calculate_budget_for_next_month(expenses_columns)
+    amend_worksheet(budget_allowance, "budget")
 
 
 print("Welcome to the Personal Budget Calculation Program\n")
-#main()
+main()
 
-expenses_columns = get_last_5_entries_expenses()
