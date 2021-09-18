@@ -1,6 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from pprint import pprint
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -104,10 +104,10 @@ def get_last_5_entries_expenses():
 
 def calculate_budget_for_next_month(data):
     """
-    Calculates the average budget for each expenses
+    Calculates and adjust the average budget for each expenses
     and adding 10% to the next months budget
     """
-    print("Calculating money to be added to budget for the next month...Please standby!\n")
+    print("Calculating and adjusting budget for the next month...\n")
     new_budget_data = []
 
     for column in data:
