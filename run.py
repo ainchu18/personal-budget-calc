@@ -27,9 +27,9 @@ def get_monthly_expenses_data():
         monthly_expenses = monthly_expenses_data.split(',')
         
         if check_val(monthly_expenses):
-            print("The values are valid!")
+            print("The values are valid!\n")
             break
-        
+
     return monthly_expenses
 
 
@@ -52,4 +52,19 @@ def check_val(values):
     return True
 
 
+def amend_monthly_expenses_worksheet(data):
+    """
+    Amend the monthly expenses worksheet.
+    Add a new row with the data provided.
+    """
+    print("Amending monthly expenses worksheet...Please stand by!\n")
+
+    expenses_worksheet = SHEET.worksheet('expenses')
+    expenses_worksheet.append_row(data)
+
+    print("Expenses worksheet amended successfully!\n")
+
+
 monthly_data = get_monthly_expenses_data()
+monthly_expenses = [int(num) for num in monthly_data]
+amend_monthly_expenses_worksheet(monthly_expenses)
