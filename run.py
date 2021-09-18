@@ -75,12 +75,16 @@ def calculate_loss_or_savings_data(expenses_row):
     spent more than his monthly budget for that specific monthly budget.
     """
     print("Calculating loss or savings...Please standby!\n")
-
     budget = SHEET.worksheet('budget').get_all_values()
     budget_row = budget[-1]
-    print(budget_row)
+    
+    loss_savings_data = []
 
+    for budget, expenses in zip(budget_row, expenses_row):
+        loss_savings = int(budget) - expenses
+        loss_savings_data.append(loss_savings)
 
+    print(loss_savings_data)
 
 
 def main():
@@ -90,7 +94,7 @@ def main():
     monthly_data = get_monthly_expenses_data()
     monthly_expenses = [int(num) for num in monthly_data]
     amend_monthly_expenses_worksheet(monthly_expenses)
-    calculate_loss_or_savings_data(monthly_expenses)
+    new_loss_savings_data = calculate_loss_or_savings_data(monthly_expenses)
 
 
 print("Welcome to the Personal Budget Calculation Program\n")
