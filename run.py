@@ -12,8 +12,15 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('PersonalBudgetCalc')
 
-expenses = SHEET.worksheet('expenses')
+def get_monthly_expenses_data():
+    """
+    Get users monthly expenses input.
+    """
+    print("Please enter your monthly expenses from the last month.")
+    print("This should be 3 numbers, separated by commas.")
+    print("Example: 550,300,200\n")
 
-data = expenses.get_all_values()
+    monthly_expenses_data = input("Enter your monthly expenses here:\n")
+    print(f"The data provided is {monthly_expenses_data}")
 
-print(data)
+get_monthly_expenses_data()
