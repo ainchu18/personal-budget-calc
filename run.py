@@ -24,9 +24,7 @@ def get_monthly_expenses_data():
         print("Example: 550,300,200\n")
 
         monthly_expenses_data = input("Enter your monthly expenses here:\n")
-        
         monthly_expenses = monthly_expenses_data.split(',')
-        
         if check_val(monthly_expenses):
             print("The values are valid!\n")
             break
@@ -76,9 +74,7 @@ def calculate_loss_or_savings_data(expenses_row):
     budget = SHEET.worksheet('budget').get_all_values()
     budget_row = budget[-1]
     print("Loss or savings data calculated successfully!\n")
-    
     loss_savings_data = []
-
     for budget, expenses in zip(budget_row, expenses_row):
         loss_savings = int(budget) - expenses
         loss_savings_data.append(loss_savings)
@@ -116,7 +112,6 @@ def calculate_budget_for_next_month(data):
         budget_data = average_expenses * 1.1
 
         new_budget_data.append(round(budget_data))
-    
     return new_budget_data
 
 
@@ -133,7 +128,9 @@ def main():
     budget_allowance = calculate_budget_for_next_month(expenses_columns)
     amend_worksheet(budget_allowance, "budget")
 
+    print("Thank you for using this program!\n")
+    print("Budget wisely!")
+
 
 print("Welcome to the Personal Budget Calculation Program\n")
 main()
-
