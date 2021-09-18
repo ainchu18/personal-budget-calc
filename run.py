@@ -12,6 +12,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('PersonalBudgetCalc')
 
+
 def get_monthly_expenses_data():
     """
     Get users monthly expenses input.
@@ -21,6 +22,24 @@ def get_monthly_expenses_data():
     print("Example: 550,300,200\n")
 
     monthly_expenses_data = input("Enter your monthly expenses here:\n")
-    print(f"The data provided is {monthly_expenses_data}")
+    
+    monthly_expenses = monthly_expenses_data.split(',')
+    check_val(monthly_expenses)
+
+
+def check_val(values):
+    """
+    Change all string datas to integeres.
+    Raise a ValueError if strings cant be changed to integers
+    or if there is not exactly 3 values entered by the user.
+    """
+    try:
+        if len(values) != 3:
+            raise ValueError(
+                f"Exactly 3 values needed, you entered {len(values)}"
+            )
+    except ValueError as e:
+        print(f"Incorrect data! {e}, please try again.")
+
 
 get_monthly_expenses_data()
