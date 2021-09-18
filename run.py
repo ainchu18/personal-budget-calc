@@ -17,14 +17,20 @@ def get_monthly_expenses_data():
     """
     Get users monthly expenses input.
     """
-    print("Please enter your monthly expenses from the last month.")
-    print("This should be 3 numbers, separated by commas.")
-    print("Example: 550,300,200\n")
+    while True:
+        print("Please enter your monthly expenses from the last month.")
+        print("This should be 3 numbers, separated by commas.")
+        print("Example: 550,300,200\n")
 
-    monthly_expenses_data = input("Enter your monthly expenses here:\n")
-    
-    monthly_expenses = monthly_expenses_data.split(',')
-    check_val(monthly_expenses)
+        monthly_expenses_data = input("Enter your monthly expenses here:\n")
+        
+        monthly_expenses = monthly_expenses_data.split(',')
+        
+        if check_val(monthly_expenses):
+            print("The values are valid!")
+            break
+        
+    return monthly_expenses
 
 
 def check_val(values):
@@ -40,7 +46,10 @@ def check_val(values):
                 f"Exactly 3 values needed, you entered {len(values)}"
             )
     except ValueError as e:
-        print(f"Incorrect data! {e}, please try again.")
+        print(f"Incorrect data! {e}, please try again.\n")
+        return False
+
+    return True
 
 
-get_monthly_expenses_data()
+monthly_data = get_monthly_expenses_data()
