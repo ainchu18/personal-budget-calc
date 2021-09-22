@@ -107,7 +107,7 @@ def calculate_budget_for_next_month(data):
     """
     print("Calculating and adjusting budget for the next month...\n")
     new_budget_data = []
-    print("Budget for the next month calculated and adjusted.\n")
+    print("Budget for the next month calculated and adjusted successfully.\n")
 
     for column in data:
         int_col = [int(num) for num in column]
