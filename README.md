@@ -28,4 +28,13 @@ Developer : JKCC
     * [Amend Worksheets](#amend)
     * [Calculate Loss or Savings](#loss-savings)
     * [Calculate and Adjust Budget for the Next Month](#budget)
+6. [Validation](#validation)
+    * [PEP8 Validation](#pep)
+    * [User Stories Validation](#stories)
+7. [Bugs](#bugs)
+8. [Deployment](#deployment)
+9. [Credits](#credits)
+10. [Acknowledgement](#acknowledgement)
 
+---
+## Goals<a name=goals></a>
