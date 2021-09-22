@@ -31,7 +31,7 @@ Developer : JKCC
     * [Calculate and Adjust Budget for the Next Month](#budget)
 6. [Validation](#validation)
     * [PEP8 Validation](#pep)
-    * [User Stories Validation](#stories)
+    * [User Stories Testing](#stories)
 7. [Bugs](#bugs)
 8. [Deployment](#deployment)
 9. [Credits](#credits)
@@ -90,4 +90,29 @@ Personal Budget Calculation app is a program that helps people properly budget t
 ## Features<a name=features></a>
 ### Get Monthly Expenses Data<a name=get-monthly-expenses-data></a>
 * This feature let the user input their monthly expenses for rent/bills, food and extras.
-![]
+![Input](docs/images/readme/input-data.png)
+
+### Check Values Entered<a name=check></a>
+* This feature will give feedback to users if the data provided is invalid.
+![Check](docs/images/readme/feedback1.png)
+![Check](docs/images/readme/feedback2.png)
+
+### Amend Worksheets<a name=amend></a>
+* This feature will automatically amend the user worksheets and save data when valid values are entered on the app.
+![Amend](docs/images/readme/amend-exp.png)
+
+### Calculate Loss or Savings<a name=loss-savings></a>
+* This feature will automatically calculate loss or savings. This is attained by deducting users monthly expenses for rent/bills, food and extras to the users budget for that month. Positive result means the user did not use all the allocated budget for that month. On one hand, a negative result means that the user spent more than the allocated budget for that month.
+![Calculate](docs/images/readme/loss-savings.png)
+
+### Calculate and Adjust Budget for the Next Month<a name=budget></a>
+* This feature will automatically calculate and adjust the users budget for the next month where budget is more needed depending on the users expenditures for the last 5 months.
+![Budget](docs/images/readme/new-budget.png)
+
+---
+## Validation<a name=validation></a>
+### PEP8 Validation
+* PEP8 online was use to validate the python code written. Result came back with no warnings or errors.
+![Pep8](docs/images/readme/pep8-validation.png)
+
+### User Stories Testing<>
