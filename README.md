@@ -103,7 +103,7 @@ Personal Budget Calculation app is a program that helps people properly budget t
 ![Amend](docs/images/readme/amend-exp.png)
 
 ### Calculate Loss or Savings<a name=loss-savings></a>
-* This feature will automatically calculate loss or savings. This is attained by deducting users monthly expenses for rent/bills, food and extras to the users budget for that month. Positive result means the user did not use all the allocated budget for that month. On one hand, a negative result means that the user spent more than the allocated budget for that month. User story covered 2.
+* This feature will automatically calculate loss or savings. This is attained by deducting users monthly expenses for rent/bills, food and extras to the users budget for that month. Positive result means the user did not use all the allocated budget for that month. On one hand, a negative result means that the user spent more than the allocated budget for that month. User story covered number 2.
 ![Calculate](docs/images/readme/loss-savings.png)
 
 ### Calculate and Adjust Budget for the Next Month<a name=budget></a>
