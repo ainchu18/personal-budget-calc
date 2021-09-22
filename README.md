@@ -24,7 +24,7 @@ Developer : JKCC
     * [Languages](#languages)
     * [Frameworks and Tools](#frameworks)
 5. [Features](#features)
-    * [Get Monthly Expenses Data](#get-monthly-expenses)
+    * [Get Monthly Expenses Data](#get-monthly)
     * [Check Values Entered](#check)
     * [Amend Worksheets](#amend)
     * [Calculate Loss or Savings](#loss-savings)
@@ -89,7 +89,7 @@ Personal Budget Calculation app is a program that helps people properly budget t
 * Heroku - where the app is deployed
 ---
 ## Features<a name=features></a>
-### Get Monthly Expenses Data<a name=get-monthly-expenses-data></a>
+### Get Monthly Expenses Data<a name=get-monthly></a>
 * This feature let the user input their monthly expenses for rent/bills, food and extras. User story covered number 1.
 ![Input](docs/images/readme/input-data.png)
 
@@ -112,7 +112,7 @@ Personal Budget Calculation app is a program that helps people properly budget t
 
 ---
 ## Validation<a name=validation></a>
-### PEP8 Validation
+### PEP8 Validation<a name=pep></a>
 * PEP8 online was use to validate the python code written. Result came back with no warnings or errors.
 ![Pep8](docs/images/readme/pep8-validation.png)
 
