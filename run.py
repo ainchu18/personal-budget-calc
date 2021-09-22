@@ -21,7 +21,7 @@ def get_monthly_expenses_data():
     while True:
         print("Please enter your monthly expenses from the last month.")
         print("This should be 3 numbers, separated by commas.")
-        print("First value is for rent & bills, second for food and last is for extras.")
+        print("1st num for rent/bills,2nd for food & last for extras.")
         print("Example: 550,300,200\n")
 
         monthly_expenses_data = input("Enter your monthly expenses here:\n")
