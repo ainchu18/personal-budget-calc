@@ -107,6 +107,7 @@ def calculate_budget_for_next_month(data):
     """
     print("Calculating and adjusting budget for the next month...\n")
     new_budget_data = []
+    print("Budget for the next month calculated and adjusted.\n")
 
     for column in data:
         int_col = [int(num) for num in column]
@@ -115,6 +116,7 @@ def calculate_budget_for_next_month(data):
 
         new_budget_data.append(round(budget_data))
     return new_budget_data
+    print("Budget for the next month calculated and adjusted.\n")
 
 
 def main():
