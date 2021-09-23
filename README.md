@@ -159,7 +159,7 @@ Data will be save directly to the user google account drive and spreadsheet
 ## Depolyment<a name=deployment></a>
 ### The website was deployed using Heroku by following these steps:
 
-1. Use the "pip freeze -> requiremnts.txt" command in the terminal to save any libraries that need to be installed in the file.
+1. Use the "pip3 freeze > requirements.txt" command in the terminal to save any libraries that need to be installed in the file.
 2. Login or create a Heroku account
 3. Click the "new" button in the upper right corner and select "create new app".
 4. Choose an app name and your region and click "Create app".
@@ -186,7 +186,7 @@ Data will be save directly to the user google account drive and spreadsheet
 
 ---
 ## Credits<a name=credits></a>
-* This app was inspired by the Love Sandwiches project provided by the Code institute.
+* Making this app was inspired by the Love Sandwiches project provided by the Code institute.
 ### Code
 * The codes were based and modified from the Love Sandwiches project of the Code institute.
 
